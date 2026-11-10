@@ -120,18 +120,13 @@ python src/live_dashboard_mt.py [--model transformer]                # live dash
 
 Learned-B was late in every bin below 150 days. Measured-B and physics-only are within noise of each other, and the auto-mode threshold was chosen on these same cases, so it still needs validation on fresh ones.
 
-**Transformer.** Trained on a small simulated smoke set (260 trajectories, 2 networks, 8 epochs). Validation loss fell steadily across all four heads, and macro-F1 on the 5 classes was 0.758 against 0.798 for LightGBM on the same data. This verifies the pipeline, not performance.
 
 ## Limitations
 
 - Only four real objects are used for evaluation, and the real ACTIVE_EOL class is small. Real-object statistics are indicative.
-- Training uses only simulated trajectories, so a simulator-to-reality gap remains.
 - Real labels combine catalogue events with physics diagnostics and judgement.
 - UNKNOWN is both a trained class and a runtime abstention, so its metrics mix the two.
-- The 80% lifetime band under-covered in smoke tests, and the shipped window can be lopsided.
 - Position is rarely well constrained and is never reported for ACTIVE_EOL; those re-entry times are indicative only.
-- Future space weather is a persistence placeholder, which limits long-lead forecasts.
-- Not yet verified: the transformer on full and real data, its live engine under the dashboards, and a fair comparison with LightGBM on identical data.
 
 ## References
 
@@ -139,7 +134,3 @@ Learned-B was late in every bin below 150 days. Measured-B and physics-only are 
 - Vallado, D. A., Crawford, P., Hujsak, R., Kelso, T. S. (2006). Revisiting Spacetrack Report #3. AIAA 2006-6753.
 - Vaswani, A., et al. (2017). Attention is all you need. *Advances in Neural Information Processing Systems 30*.
 - CelesTrak space weather and Earth orientation data; ESA DISCOS.
-
-## License
-
-[Choose a licence, for example MIT or Apache-2.0, and add a `LICENSE` file.]
