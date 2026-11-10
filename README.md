@@ -119,6 +119,7 @@ python src/live_dashboard_mt.py [--model transformer]                # live dash
 | Synthetic test, overall | 0.20 | 0.33 | 0.20 | 0.19 | 0.20 |
 
 Learned-B was late in every bin below 150 days. Measured-B and physics-only are within noise of each other, and the auto-mode threshold was chosen on these same cases, so it still needs validation on fresh ones.
+<img width="1538" height="927" alt="image" src="https://github.com/user-attachments/assets/46e44d59-73c4-474a-8fe0-8fa7eb7d8626" />
 
 
 ## Limitations
